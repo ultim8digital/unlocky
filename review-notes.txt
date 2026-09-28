@@ -1,0 +1,40 @@
+Unlocky locks apps the user chooses (Apple Screen Time) and unlocks one for a few minutes after the user completes an exercise set that is counted live by the camera. No account, no network access, no in-app purchases, no data collection.
+
+HOW IT USES SCREEN TIME
+- FamilyControls AuthorizationCenter with .individual authorization (the device owner restricts themselves; iOS asks for Face ID or the passcode).
+- The user picks apps in Apple's FamilyActivityPicker. Unlocky only holds the opaque tokens and shields them with ManagedSettingsStore.shield. It never hides apps (no blockedApplications) and never sees app names or usage.
+- A DeviceActivity monitor extension re-applies the shield when the earned minutes of use are spent. ShieldConfiguration and ShieldAction extensions show the lock screen and its buttons.
+
+STEPS TO TEST (real iPhone required; Screen Time does not work in the Simulator)
+1. Launch Unlocky and tap Continue.
+2. Tap "Allow Screen Time access", then Continue in the iOS dialog and confirm with Face ID or the passcode.
+3. Pick one or two apps to lock in Apple's picker (for example Photos or Podcasts), then Continue.
+4. "Set the price": to test quickly, turn on Squats or Jumping jacks and set Reps to 5 (the minimum). Continue.
+5. Allow the camera and notifications, then tap "Start locking".
+6. Go to the Home Screen and open a locked app. Unlocky's lock screen appears. Tap "Earn time with reps".
+7. Tap the notification that appears. Unlocky opens straight into the camera workout. (If notifications were not allowed, just open Unlocky: the workout opens automatically.)
+8. Stand the phone up about 2 m away and do the reps. The skeleton overlay and counter show each rep; poor form is rejected with a message.
+9. When the set is complete the app unlocks for the minutes earned. Those minutes count only while the unlocked app is in use; then it locks again. A lock button on Unlocky's home screen re-locks it early.
+
+TO TEST REP COUNTING WITHOUT SCREEN TIME
+On Unlocky's home screen tap "Practice" to try the camera counter without unlocking anything.
+
+OPTIONAL PIN (off by default)
+In Settings > PIN code the user can set their own 4-digit PIN. When set, it is asked for only on unlock-side actions: turning "Lock apps" off, removing apps from the locked list, or resetting. Adding locks never needs it. Five wrong tries cause a short, growing pause. It is stored as a salted hash in the Keychain. There is no master code.
+
+REMOVING LOCKS
+Settings > "Lock apps" off removes every lock at once (asks for the PIN only if the user set one), and "Stop locking and reset" starts over. Locks can also be removed from iPhone Settings > Screen Time > Apps with Screen Time Access > Unlocky, or by deleting the app.
+
+CAMERA AND PRIVACY
+The camera runs only while a workout is on screen, with the live preview visible. Frames are analysed on-device with Apple's Vision body-pose detection and are never recorded, stored or transmitted. The app makes no network requests. App Privacy: Data Not Collected.
+
+NOTIFICATIONS
+The only notification is the one the user triggers by tapping "Earn time with reps" on a lock screen: a local notification that brings them into the workout (extensions cannot open their app directly). No marketing notifications.
+
+WHAT IS DIFFERENT FROM SIMILAR APPS
+Completely free with no subscription or paywall; no account and zero network or analytics; form checking that rejects partial reps; earned minutes measured as actual use; a rising price per unlock and a daily maximum.
+
+The Family Controls (Distribution) entitlement has been granted to our team and applies for all four bundle IDs: com.ultim8digital.unlocky, com.ultim8digital.unlocky.monitor, com.ultim8digital.unlocky.shield, com.ultim8digital.unlocky.shieldaction.
+
+LANGUAGES
+The app is localized into English, Russian, Spanish, French, Arabic, Hindi and Thai; it follows the device language.
