@@ -7,10 +7,10 @@ HOW IT USES SCREEN TIME
 
 STEPS TO TEST (real iPhone required; Screen Time does not work in the Simulator)
 1. Launch Unlocky and tap Continue.
-2. Tap "Allow Screen Time access", then Continue in the iOS dialog and confirm with Face ID or the passcode.
+2. On the Screen Time page tap Continue; the iOS Screen Time dialog appears. Tap Continue there and confirm with Face ID or the passcode.
 3. Pick one or two apps to lock in Apple's picker (for example Photos or Podcasts), then Continue.
 4. "Set the price": to test quickly, turn on Squats or Jumping jacks and set Reps to 5 (the minimum). Continue.
-5. Allow the camera and notifications, then tap "Start locking".
+5. On the camera page tap Continue; iOS asks for camera and notification access. Then tap "Start locking".
 6. Go to the Home Screen and open a locked app. Unlocky's lock screen appears. Tap "Earn time with reps".
 7. Tap the notification that appears. Unlocky opens straight into the camera workout. (If notifications were not allowed, just open Unlocky: the workout opens automatically.)
 8. Stand the phone up about 2 m away and do the reps. The skeleton overlay and counter show each rep; poor form is rejected with a message.
