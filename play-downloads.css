@@ -1,0 +1,13 @@
+/* Official Google Play artwork is unchanged; availability is a separate label. */
+.download-actions,.closing-downloads{--store-badge-height:57px;column-gap:14px;row-gap:10px}
+.download-actions>.quiet-link{flex-basis:100%;margin-block-start:16px}
+.download-actions>.store-link img,.closing-downloads>.store-link img{inline-size:calc(var(--store-badge-height)*3.01754);block-size:var(--store-badge-height)}
+.google-play-cta{position:relative;display:inline-flex;align-items:center;justify-content:center;inline-size:calc(var(--store-badge-height)*3.3718);block-size:var(--store-badge-height);min-block-size:44px;flex:none;padding:0;border:0;border-radius:8px;background:transparent;color:inherit;box-shadow:none;opacity:1;cursor:default}
+.google-play-cta>.google-play-badge{inline-size:100%;block-size:var(--store-badge-height);object-fit:contain}
+.google-play-status{position:absolute;inset-block-start:calc(100% + 6px);inset-inline:0;font:600 .65rem/1.4 Manrope,system-ui,sans-serif;color:var(--muted);text-align:center;overflow-wrap:anywhere}
+.closing-downloads{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex-wrap:wrap;max-inline-size:390px}
+.closing-downloads>.store-link{padding-block:0}
+.closing-downloads .google-play-status{color:#fffdf9}
+@media(max-width:1100px){.closing{grid-template-columns:1fr}.closing-downloads{justify-content:flex-start;max-inline-size:none}}
+@media(max-width:660px){.download-actions,.closing-downloads{--store-badge-height:clamp(41px,calc((100vw - 54px)/6.39),53px);column-gap:12px}.closing-downloads{justify-content:center;row-gap:28px}.google-play-status{font-size:.65rem}}
+@media(forced-colors:active){.google-play-status,.closing-downloads .google-play-status{color:CanvasText}}
