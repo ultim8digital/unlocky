@@ -58,3 +58,6 @@ if (document.body.dataset.app === 'propagate') {
     if (target && document.documentElement.lang !== code) location.replace(target.href);
   }
 }
+
+/* Keep the chosen product-page language when opening help or privacy. */
+(()=>{const script=document.currentScript;if(!script)return;const root=new URL('.',script.src);const apply=()=>{const lang=document.documentElement.lang;for(const a of document.querySelectorAll('a[href]')){const u=new URL(a.href,location.href);if(u.origin===root.origin&&['privacy.html','support.html'].some(p=>u.pathname===root.pathname+p)){u.hash=lang;a.href=u.href}}};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply,{once:true});else apply()})();
