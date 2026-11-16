@@ -1,0 +1,22 @@
+/* Official Apple iPhone 18 Pro Max artwork: full front, proportional and unobstructed. */
+body:not(.type-game) .hero-art{height:600px}
+body:not(.type-game) .hero-art .app-frame.apple-device{
+  width:min(270px,calc(100% - 10px));
+  aspect-ratio:49/100;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  border:0;
+  border-radius:0;
+  background:transparent;
+  overflow:visible;
+  box-shadow:none;
+  filter:none;
+  animation:none;
+  opacity:1;
+}
+.apple-device img{display:block;width:100%;height:auto}
+@media(max-width:360px){
+  body:not(.type-game) .hero-art{height:560px}
+  body:not(.type-game) .hero-art .app-frame.apple-device{width:250px;max-width:calc(100% - 10px)}
+}
